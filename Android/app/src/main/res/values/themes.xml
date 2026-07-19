@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Base.Theme.OUCAI" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Only 2 colors: primary (toolbar, buttons) and secondary (backgrounds) -->
+        <item name="colorPrimary">@color/oucai_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSurface">@color/oucai_secondary</item>
+        <item name="colorOnSurface">@color/black</item>
+        <!-- Map secondary to background -->
+        <item name="android:colorBackground">@color/oucai_secondary</item>
+    </style>
+
+    <style name="Theme.OUCAI" parent="Base.Theme.OUCAI" />
+</resources>

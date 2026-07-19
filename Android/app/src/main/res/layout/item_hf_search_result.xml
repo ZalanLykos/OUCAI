@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="14dp"
+    android:paddingBottom="14dp"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
+
+    <!-- Author Text -->
+    <TextView
+        android:id="@+id/tv_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="prism-ml"
+        android:textSize="13sp"
+        android:textColor="#888888"
+        android:layout_marginBottom="2dp" />
+
+    <!-- Title Text -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ternary-Bonsai-27B"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Meta Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Tag Chip -->
+        <TextView
+            android:id="@+id/tv_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Vision"
+            android:textSize="11sp"
+            android:textStyle="normal"
+            android:textColor="#4CAF50"
+            android:background="#1A4CAF50"
+            android:gravity="center"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_marginEnd="12dp" />
+
+        <!-- Clock Icon + Time -->
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/ic_clock_24"
+            android:layout_marginEnd="4dp" />
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12 hours ago"
+            android:textSize="12sp"
+            android:textColor="#888888"
+            android:layout_marginEnd="16dp" />
+
+        <!-- Download Icon + Count -->
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/ic_download_24"
+            android:layout_marginEnd="4dp" />
+
+        <TextView
+            android:id="@+id/tv_downloads"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="301.89k"
+            android:textSize="12sp"
+            android:textColor="#888888"
+            android:layout_marginEnd="16dp" />
+
+        <!-- Heart Icon + Count -->
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/ic_heart_24"
+            android:layout_marginEnd="4dp" />
+
+        <TextView
+            android:id="@+id/tv_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="717"
+            android:textSize="12sp"
+            android:textColor="#888888" />
+
+    </LinearLayout>
+
+    <!-- Item Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#333333"
+        android:layout_marginTop="14dp" />
+
+</LinearLayout>

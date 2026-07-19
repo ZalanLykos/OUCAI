@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/oucai_primary"
+    android:orientation="vertical">
+
+    <!-- Navigation Header -->
+    <include layout="@layout/nav_header"
+        android:background="@color/oucai_primary"  />
+
+    <!-- Navigation Menu Items -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_menu_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:itemBackground="@color/oucai_secondary"
+        app:itemIconPadding="12dp"
+        app:itemIconSize="24dp"
+        app:itemIconTint="@color/nav_item_text_color"
+        app:itemShapeAppearance="@style/ShapeAppearance.Material3.Corner.None"
+        app:itemTextColor="@color/nav_item_text_color"
+        app:menu="@menu/nav_menu" />
+
+    <!-- Recent Chats Section -->
+    <include layout="@layout/nav_recent_chats" />
+
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Default OUCAi Colors (user-customizable) -->
+    <color name="oucai_primary">#000000</color>
+    <color name="oucai_secondary">#161616</color>
+    <color name="oucai_primary_dark">#90CAF9</color>
+    <color name="oucai_secondary_dark">#121212</color>
+</resources>

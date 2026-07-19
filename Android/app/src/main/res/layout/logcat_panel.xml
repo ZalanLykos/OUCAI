@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/logcat_panel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:visibility="visible"
+    android:background="#1E1E1E">
+
+    <!-- TOP PANE: System Logcat -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Logcat Header Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#2D2D2D"
+            android:paddingStart="12dp"
+            android:paddingEnd="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Logcat"
+                android:textSize="12sp"
+                android:textColor="#CCCCCC"
+                android:textStyle="bold"
+                android:typeface="monospace" />
+
+            <ImageButton
+                android:id="@+id/btn_copy_logcat"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_copy_24"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:contentDescription="Copy Logcat"
+                android:padding="4dp"
+                android:tint="#CCCCCC" />
+
+            <ImageButton
+                android:id="@+id/btn_logcat_start"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_play_24"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:contentDescription="Start/Pause Logcat"
+                android:padding="4dp"
+                android:tint="#4CAF50" />
+
+            <ImageButton
+                android:id="@+id/btn_logcat_clear"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_clear_24"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:contentDescription="Clear Logs"
+                android:padding="4dp"
+                android:tint="#CCCCCC" />
+
+            <ImageButton
+                android:id="@+id/btn_logcat_scroll_top"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_chevron_double_up_24"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:contentDescription="Scroll to Top"
+                android:padding="4dp"
+                android:tint="#CCCCCC" />
+
+            <ImageButton
+                android:id="@+id/btn_logcat_scroll_end"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_chevron_double_down_24"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:contentDescription="Scroll to End"
+                android:padding="4dp"
+                android:tint="#CCCCCC" />
+
+        </LinearLayout>
+
+        <!-- Logcat Output Area -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fadeScrollbars="false"
+            android:scrollbarStyle="insideOverlay">
+
+            <TextView
+                android:id="@+id/logcat_output"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Logcat output will appear here..."
+                android:textSize="11sp"
+                android:typeface="monospace"
+                android:textColor="#D4D4D4"
+                android:textIsSelectable="true"
+                android:lineSpacingExtra="2sp" />
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <!-- DIVIDER / BARRIER -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#007ACC" />
+
+    <!-- BOTTOM PANE: Model Logging -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Model Logging Header Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#2D2D2D"
+            android:paddingStart="12dp"
+            android:paddingEnd="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Model Logging"
+                android:textSize="12sp"
+                android:textColor="#CCCCCC"
+                android:textStyle="bold"
+                android:typeface="monospace" />
+
+            <ImageButton
+                android:id="@+id/btn_copy_model_log"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_copy_24"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:contentDescription="Copy Model Log"
+                android:padding="4dp"
+                android:tint="#CCCCCC" />
+
+            <ImageButton
+                android:id="@+id/btn_model_log_start"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_play_24"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:contentDescription="Start/Pause Model Log"
+                android:padding="4dp"
+                android:tint="#4CAF50" />
+
+            <ImageButton
+                android:id="@+id/btn_model_log_clear"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_clear_24"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:contentDescription="Clear Model Log"
+                android:padding="4dp"
+                android:tint="#CCCCCC" />
+
+            <ImageButton
+                android:id="@+id/btn_model_log_scroll_top"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_chevron_double_up_24"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:contentDescription="Scroll to Top"
+                android:padding="4dp"
+                android:tint="#CCCCCC" />
+
+            <ImageButton
+                android:id="@+id/btn_model_log_scroll_end"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/ic_chevron_double_down_24"
+                android:background="@android:color/transparent"
+                android:scaleType="centerInside"
+                android:contentDescription="Scroll to End"
+                android:padding="4dp"
+                android:tint="#CCCCCC" />
+
+        </LinearLayout>
+
+        <!-- Model Log Output Area -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fadeScrollbars="false"
+            android:scrollbarStyle="insideOverlay">
+
+            <TextView
+                android:id="@+id/model_log_output"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="Model logging output will appear here..."
+                android:textSize="11sp"
+                android:typeface="monospace"
+                android:textColor="#D4D4D4"
+                android:textIsSelectable="true"
+                android:lineSpacingExtra="2sp" />
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

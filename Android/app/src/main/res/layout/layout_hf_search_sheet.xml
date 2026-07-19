@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#000000"
+    android:padding="16dp">
+
+    <!-- Drag Handle Pill -->
+    <View
+        android:layout_width="48dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:background="#333333"
+        android:layout_marginTop="8dp" />
+
+    <!-- Close Button -->
+    <ImageButton
+        android:id="@+id/btn_close"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@drawable/ic_close_24"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Close"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Search Input -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:orientation="horizontal"
+        android:background="#1A1A1A"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_search_24"
+            android:layout_marginEnd="8dp" />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:hint="Search Hugging Face models"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#888888"
+            android:textSize="14sp"
+            android:inputType="text"
+            android:singleLine="true" />
+
+    </LinearLayout>
+
+    <!-- Filter Chips -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Author"
+                android:textSize="12sp"
+                app:chipBackgroundColor="#1A4CAF50"
+                app:chipStrokeColor="#4CAF50"
+                app:chipStrokeWidth="1dp"
+                app:chipCornerRadius="10dp"
+                app:chipIcon="@drawable/ic_chevron_down_24"
+                app:chipIconSize="16dp"
+                app:chipIconTint="#4CAF50" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="0dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_relevance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Relevance"
+                android:textSize="12sp"
+                app:chipBackgroundColor="#1A4CAF50"
+                app:chipStrokeColor="#4CAF50"
+                app:chipStrokeWidth="1dp"
+                app:chipCornerRadius="10dp"
+                app:chipIcon="@drawable/ic_chevron_down_24"
+                app:chipIconSize="16dp"
+                app:chipIconTint="#4CAF50" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <!-- Section Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#333333"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Search Results RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_hf_search_results"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:nestedScrollingEnabled="false" />
+
+</LinearLayout>

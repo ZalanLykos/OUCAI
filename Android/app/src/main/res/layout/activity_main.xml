@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <!-- Main content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- ===== MODERN HEADER / APP BAR ===== -->
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.Material3.ActionBar"
+            app:title=""
+            app:titleTextColor="?attr/colorOnPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <!-- Hamburger Menu Button -->
+                <ImageButton
+                    android:id="@+id/btn_hamburger"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="Open Menu"
+                    android:padding="8dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_menu_24"
+                    android:visibility="gone" />
+
+                <!-- Title + Subtitle -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="start">
+
+                    <TextView
+                        android:id="@+id/tv_app_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chat"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorOnPrimary" />
+
+                    <TextView
+                        android:id="@+id/tv_model_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:alpha="0.8"
+                        android:visibility="gone" />
+
+                </LinearLayout>
+
+                <!-- New Chat Button -->
+                <ImageButton
+                    android:id="@+id/btn_new_chat"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_new_chat_24"
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerInside"
+                    android:contentDescription="New Chat"
+                    android:padding="8dp" />
+
+                <!-- More Options Button -->
+                <ImageButton
+                    android:id="@+id/btn_more_options"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_more_vert_24"
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerInside"
+                    android:contentDescription="More Options"
+                    android:padding="8dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <!-- Chat Panel -->
+        <LinearLayout
+            android:id="@+id/chat_panel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/messages"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fadeScrollbars="false"
+                    android:scrollbars="vertical"
+                    android:clipToPadding="false"
+                    android:paddingBottom="8dp"
+                    app:reverseLayout="true"
+                    tools:listitem="@layout/item_message_assistant" />
+
+                <LinearLayout
+                    android:id="@+id/no_model_placeholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:padding="32dp">
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/ic_center_logo"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        android:gravity="center"
+                        android:text="Tap the '+' button below to import a GGUF model or select one from Models"
+                        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                        android:textColor="?android:attr/textColorSecondary" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_open_models_from_placeholder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Models"
+                        app:cornerRadius="20dp"
+                        app:backgroundTint="#000000"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="#333333"
+                        app:icon="@drawable/ic_model_24"
+                        app:iconGravity="textStart"
+                        app:iconPadding="8dp" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- ===== MODERN BOTTOM INPUT BAR ===== -->
+            <LinearLayout
+                android:id="@+id/input_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
+                android:background="?attr/colorSurface">
+
+                <!-- + Attachment Button -->
+                <ImageButton
+                    android:id="@+id/btn_attachment"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_plus_24"
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerInside"
+                    android:contentDescription="Attach"
+                    android:padding="6dp" />
+
+                <!-- ^ Expand Settings Button -->
+                <ImageButton
+                    android:id="@+id/btn_expand_settings"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@drawable/ic_chevron_up_24"
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerInside"
+                    android:contentDescription="Expand Settings"
+                    android:padding="6dp" />
+
+                <!-- Text Input -->
+                <EditText
+                    android:id="@+id/user_input"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_input_field"
+                    android:enabled="false"
+                    android:gravity="center_vertical"
+                    android:hint="Please first pick a GGUF model file to import."
+                    android:inputType="textMultiLine"
+                    android:maxLines="4"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    android:textSize="14sp" />
+
+                <!-- Send Button (paper airplane) -->
+                <ImageButton
+                    android:id="@+id/btn_send"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_send_24"
+                    android:background="@android:color/transparent"
+                    android:scaleType="centerInside"
+                    android:contentDescription="Send"
+                    android:padding="8dp"
+                    android:enabled="false"
+                    android:alpha="0.38" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Settings Panel (hidden by default) -->
+        <include layout="@layout/settings_panel" />
+
+        <!-- Models Panel (hidden by default) -->
+        <include layout="@layout/models_panel" />
+
+        <!-- App Info Panel (hidden by default) -->
+        <include layout="@layout/app_info_panel" />
+
+        <!-- ===== REMASTERED LOGCAT PANEL ===== -->
+        <include layout="@layout/logcat_panel" />
+
+    </LinearLayout>
+
+    <!-- Navigation Drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        android:background="@color/oucai_secondary_dark"
+        app:headerLayout="@layout/nav_drawer_content"
+        app:itemShapeAppearance="@style/ShapeAppearance.Material3.Corner.None"
+        app:itemIconPadding="12dp"
+        app:itemIconSize="24dp"
+        app:itemTextColor="@color/nav_item_text_color"
+        app:itemIconTint="@color/nav_item_text_color"
+        app:itemBackground="@drawable/nav_item_background" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

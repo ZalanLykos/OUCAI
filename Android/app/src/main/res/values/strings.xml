@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">OUCAI</string>
+    <string name="nav_open">Open navigation</string>
+    <string name="nav_close">Close navigation</string>
+    <string name="no_model_hint">Tap the button below to import a GGUF model</string>
+    <string name="credits">Made by ZalanLykos</string>
+    <string name="about_summary">OUCAI is an on-device AI chat assistant powered by llama.cpp. Import a GGUF model and start chatting privately on your device.\n\nMade by ZalanLykos</string>
+</resources>

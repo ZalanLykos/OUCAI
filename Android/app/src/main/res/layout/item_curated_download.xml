@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="#0D0D0D"
+    app:cardCornerRadius="28dp"
+    app:cardElevation="2dp"
+    app:strokeWidth="1dp"
+    app:strokeColor="#2A2A2A">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- ==================== HEADER ROW ==================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- Leading Icon -->
+            <ImageView
+                android:id="@+id/curated_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_chat_24"
+                android:tint="#888888"
+                tools:src="@drawable/ic_chat_24" />
+
+            <!-- Model Title -->
+            <TextView
+                android:id="@+id/curated_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif-medium"
+                android:maxLines="1"
+                android:ellipsize="end"
+                tools:text="SmolLM2-1.7B-Instruct (Q8_0)" />
+
+            <!-- Chip Icon -->
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="4dp"
+                android:src="@drawable/ic_chip_24"
+                android:tint="#888888" />
+
+            <!-- File Size -->
+            <TextView
+                android:id="@+id/curated_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#888888"
+                android:textSize="14sp"
+                tools:text="1.82 GB" />
+
+        </LinearLayout>
+
+        <!-- ==================== ARCHITECTURE A: IDLE CONTROL ROW ==================== -->
+        <LinearLayout
+            android:id="@+id/idle_control_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="12dp"
+            android:visibility="visible">
+
+            <!-- Download Pill Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_download"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:paddingHorizontal="20dp"
+                android:text="Download"
+                android:textSize="13sp"
+                app:cornerRadius="19dp"
+                app:icon="@drawable/ic_download_24"
+                app:iconGravity="textStart"
+                app:iconPadding="6dp"
+                app:backgroundTint="#1A90CAF9"
+                app:strokeWidth="1dp"
+                app:strokeColor="#90CAF9"
+                app:iconTint="#90CAF9" />
+
+            <!-- Settings Icon -->
+            <ImageButton
+                android:id="@+id/btn_settings"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_settings_24"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginStart="8dp"
+                android:tint="#888888"
+                android:contentDescription="Model Settings" />
+
+            <!-- Spacer -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <!-- Chevron Toggle -->
+            <ImageButton
+                android:id="@+id/btn_expand"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_chevron_down_24"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginStart="4dp"
+                android:tint="#888888"
+                android:contentDescription="Expand Details" />
+
+        </LinearLayout>
+
+        <!-- ==================== ARCHITECTURE B: DOWNLOADING STATUS ROW ==================== -->
+        <LinearLayout
+            android:id="@+id/downloading_control_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp"
+            android:visibility="gone">
+
+            <!-- Active Pill Progress Layout -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:background="#1A4CAF50"
+                android:paddingHorizontal="16dp"
+                app:cornerRadius="19dp">
+
+                <!-- Cancel / Pause Icon -->
+                <ImageView
+                    android:id="@+id/btn_cancel_download"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/ic_close_24"
+                    android:tint="#4CAF50"
+                    android:layout_marginEnd="8dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+                <!-- Downloading Text + Percentage -->
+                <TextView
+                    android:id="@+id/downloading_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="#4CAF50"
+                    android:textSize="13sp"
+                    android:text="Downloading..."
+                    tools:text="Downloading... 42%" />
+
+                <!-- Speed Badge -->
+                <TextView
+                    android:id="@+id/download_speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#4CAF50"
+                    android:textSize="12sp"
+                    android:background="#1A4CAF50"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="2dp"
+                    app:cornerRadius="10dp"
+                    tools:text="4.2 MB/s" />
+
+            </LinearLayout>
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/download_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:progressTint="#4CAF50"
+                android:progressBackgroundTint="#2A2A2A" />
+
+            <!-- Bytes Transferred Text -->
+            <TextView
+                android:id="@+id/download_bytes_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="#666666"
+                android:textSize="12sp"
+                tools:text="285 MB / 1.32 GB" />
+
+        </LinearLayout>
+
+        <!-- ==================== EXPANDABLE TECHNICAL DETAILS ==================== -->
+        <LinearLayout
+            android:id="@+id/details_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="12dp">
+
+            <!-- Full Name Block (16dp Radius) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#1A1A1A"
+                android:padding="12dp"
+                android:layout_marginBottom="8dp"
+                app:cornerRadius="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Model Name"
+                    android:textColor="#888888"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/full_model_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    tools:text="SmolLM2-1.7B-Instruct (Q8_0)" />
+
+            </LinearLayout>
+
+            <!-- Parallel Grid Capsules Row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="8dp">
+
+                <!-- Parameters Capsule -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="#1A1A1A"
+                    android:padding="12dp"
+                    android:layout_marginEnd="4dp"
+                    app:cornerRadius="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Parameters"
+                        android:textColor="#888888"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="2dp" />
+
+                    <TextView
+                        android:id="@+id/param_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        tools:text="1.71B" />
+
+                </LinearLayout>
+
+                <!-- Author Capsule -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:background="#1A1A1A"
+                    android:padding="12dp"
+                    android:layout_marginStart="4dp"
+                    app:cornerRadius="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Author"
+                        android:textColor="#888888"
+                        android:textSize="12sp"
+                        android:layout_marginBottom="2dp" />
+
+                    <TextView
+                        android:id="@+id/author_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        tools:text="bartowski" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Hugging Face Action Button (40dp height, 20dp cornerRadius outline pill) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_huggingface"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="View Model Card on Hugging Face"
+                android:textSize="13sp"
+                app:cornerRadius="20dp"
+                app:icon="@drawable/ic_link_24"
+                app:iconGravity="textStart"
+                app:iconPadding="8dp"
+                app:backgroundTint="#00000000"
+                app:strokeWidth="1dp"
+                app:strokeColor="#444444"
+                app:iconTint="#888888" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
