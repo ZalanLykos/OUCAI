@@ -27,6 +27,11 @@
 
 ---
 
+## Download
+
+[![Download APK](https://img.shields.io/badge/Download-Latest%20APK-000000?style=for-the-badge&logo=android&logoColor=white&edge_flat=true)](https://github.com/ZalanLykos/OUCAI/releases/latest/download/app-release.apk)
+---
+
 ## Overview
 
 OUCAi is a lightweight, high-performance Android application designed for running optimized local Large Language Models (LLMs) and Vision-Language Models (VLMs) directly on your mobile hardware. Built with a strict focus on offline privacy and a custom "Modern Noir" aesthetic, OUCAi eliminates cloud dependencies entirely, putting absolute computational control back into your hands. 
