@@ -1,7 +1,7 @@
 <h1 align= "center"> OUCAi — On-Device AI Chat for Android</h1>
 
 <p align="center">
-  <img src="img/icon.png" alt="OUCAi Logo" width="128" height="128">
+  <img src="img/logo.png" alt="OUCAi Logo" width="128" height="128">
 </p>
 
 <p align="center">
@@ -50,7 +50,7 @@ OUCAi is a lightweight, high-performance Android application designed for runnin
 
 | Chat Interface | Models Panel | Settings Menu |
 |:---:|:---:|:---:|
-| <img src="img/1.jpeg" width="240" alt="Chat Interface Screen"/> | <img src="img/1.jpeg" width="240" alt="Models Management Screen"/> | <img src="img/1.jpeg" width="240" alt="Settings Configuration Screen"/> |
+| <img src="img/1.jpeg" width="240" alt="Chat Interface Screen"/> | <img src="img/2.jpeg" width="240" alt="Models Management Screen"/> | <img src="img/3.jpeg" width="240" alt="Settings Configuration Screen"/> |
 
 ## Presentation & Brief
 
