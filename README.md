@@ -1,7 +1,7 @@
 <h1 align= "center"> OUCAi — On-Device AI Chat for Android</h1>
 
 <p align="center">
-  <img src="icon.png" alt="OUCAi Logo" width="128" height="128">
+  <img src="img/icon.png" alt="OUCAi Logo" width="128" height="128">
 </p>
 
 <p align="center">
